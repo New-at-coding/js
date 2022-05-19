@@ -1,0 +1,51 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Cake Form</title>
+    <script type="text/javascript" src="formcalculations.js"></script>
+    <link href="cakeform.css" rel="stylesheet" type="text/css" />
+</head>
+<body onload='hideTotal(), startTime();'>
+    <div id="wrap">
+        <form action="" id="cakeform" onsubmit="return false;">
+        <div>
+            <div class="cont_order">
+               <fieldset>
+                <legend>메뉴 계산기</legend>
+                <label >메뉴 목록</label>
+                <label class='radiolabel'><input type="radio" id="selectRadio" name="selectedcake" value="Espresso" onclick="calculateTotal()" />에스프레소 [ Espresso ] - 2000원</label><br/>
+                <label class='radiolabel'><input type="radio" id="selectRadio" name="selectedcake" value="Americano" onclick="calculateTotal()" />아메리카노 [ Americano ] - 4000원</label><br/>
+                <label class='radiolabel'><input type="radio" id="selectRadio" name="selectedcake" value="Cappuccino" onclick="calculateTotal()" />카푸치노 [ Cappuccino ] - 5500원</label><br/>
+                <label class='radiolabel'><input type="radio" id="selectRadio" name="selectedcake" value="cafeLatte" onclick="calculateTotal()" />카페라떼 [ Cafe Latte ] - 10000원</label><br/>
+                <br/>
+                <label >사이드 메뉴</label>
+         
+                <select id="filling" name='filling' onchange="calculateTotal()">
+                <option value="None">없음</option>
+                <option value="Hotcake">핫케이크 (4000원)</option>
+                <option value="FrenchToast">프렌치토스트 (3000원)</option>
+                <option value="ChocolateCake">초콜릿케이크 1조각 (1500원)</option>
+               </select>
+                <br/>
+               
+                <div id="totalPrice"></div>
+                
+                </fieldset>
+            </div>
+            
+        	<div class="cont_details">
+            	<fieldset>
+                <legend>현재시각</legend>
+                    <p id="year"></p>
+                    <p id="time"></p>
+                </fieldset>
+            </div>
+            <input type='submit' id='btn' value='Submit' onclick="calculateTotal()" />
+        </div>  
+       </form>
+	</div><!--End of wrap-->
+
+</body>
+</html>
